@@ -1,0 +1,31 @@
+{% load static %}
+
+ <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{% url 'index'%}" class="logo">
+                        <img src="{% static 'mainassets/images/klassy-logo.png'%}" align="klassy cafe html template">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="{% url 'index'%}" class="nav-link  {% if "/" == request.path  %} active {% endif %}">Home</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'about'%}" class="nav-link  {% if "/about" == request.path  %} active {% endif %}">About</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'menu'%}" class="nav-link  {% if "/menu" == request.path  %} active {% endif %}">Menu</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'chefs'%}" class="nav-link  {% if "/chef" == request.path  %} active {% endif %}">Chefs</a></li> 
+                        <li class="scroll-to-section"><a href="{% url 'offers'%}" class="nav-link  {% if "/offers" == request.path  %} active {% endif %}">Offers</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'reservation'%}" class="nav-link  {% if "/reservation" == request.path  %} active {% endif %}">Contact Us</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'staff'%}" class="nav-link  {% if "/admin" == request.path  %} active {% endif %}">Admin</a></li> 
+                    </ul>        
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

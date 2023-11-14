@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+
+    {% block content%}
+
+   
+    <section class="section" id="chefs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Our Chefs</h6>
+                        <h2>We offer the best ingredients for you</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for employee in employees %}
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="{{ employee.social_fb }}"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{ employee.social_tweet }}"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="{{ employee.social_ig }}"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                            <img src="{{ employee.profile.url }}"  height="300" width="300" alt="">
+                        </div>
+                        <div class="down-content">
+                            <h4>{{ employee.name }}</h4>
+                            <span>{{ employee.role }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% endblock content%}
+    
